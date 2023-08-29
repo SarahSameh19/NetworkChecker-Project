@@ -1,18 +1,27 @@
-/* ... (other styles) ... */
 
 .navbar-icon {
-    position: absolute;
-    left: 20px;
-    height: 48px;
-    width: 100px;
+     position: absolute;
+    left: 150px;
+    top: 13px;
+  
 }
+#imm{
+    width: 150px;
+    
+}
+
 
 .navbar {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100px;
     justify-content: center; 
-    background-color: rgba(0, 0, 0, 0.334);
+    background-color: rgba(0, 0, 0, 0.267);
+    border-bottom: 1px solid #ffffff89; 
+    z-index: 100;
 }
 
 .navbar-content {
@@ -23,16 +32,14 @@
     padding-bottom: 27px;
 }
 
-
-
 .anav {
     color: var(--neutral-50, #F9FAFB);
     text-decoration: none;
     text-align: center;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
-    font-weight: 500;
-    font-style: normal;
+    font-weight: 350;
+        font-style: normal;
     line-height: 18px;
     transition: color 0.25s ease-in-out; 
 }

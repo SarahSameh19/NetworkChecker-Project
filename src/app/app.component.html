@@ -1,1 +1,17 @@
-<app-nav-bar></app-nav-bar>
+
+
+
+<html>
+
+<body>
+
+  <div class="appcomp">
+    <app-nav-bar></app-nav-bar>
+   
+    <app-popupcomp *ngIf="popupData.isPopupVisible" ></app-popupcomp>
+  </div>
+<router-outlet></router-outlet>
+
+
+</body>
+</html>
