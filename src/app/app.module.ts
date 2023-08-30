@@ -8,6 +8,7 @@ import { FirstPageComponent } from './first-page/first-page.component';
 import { PopupcompComponent } from './popupcomp/popupcomp.component';
 import { ProvidersPageComponent } from './providers-page/providers-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClickOutsideDirective } from './click-outside.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     FirstPageComponent,
     PopupcompComponent,
     ProvidersPageComponent,
+    ClickOutsideDirective,
     
   ],
   imports: [
