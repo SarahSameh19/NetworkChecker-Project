@@ -7,6 +7,7 @@ import { PopupService } from './popup.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   constructor(public popupData:PopupService){}
   title = 'NetworkChecker';
 }

@@ -1,3 +1,4 @@
+
 <div class="modal" [ngClass]="{'active': popupData.isPopupVisible}" >
     <div class="modal-content">
         <h3 class="txb">Please enter your<br> Insurance Number</h3>
@@ -5,7 +6,8 @@
             network providers.</h5>
 
         <div class="inputdiv">
-            <input type="text" placeholder="12345" class="inputs"><br><br><br>
+            <input type="text" [(ngModel)]="insuranceNumber" placeholder="12345" class="inputs" (keyup.enter)="gotoproviders()" ><br><br><br>
+            <small *ngIf="this.apiError" class="text-danger">Please enter a valid Id</small>
         </div>
         <div class="divbut">
             <button class="btnn" (click)="gotoproviders()">Show Providers</button>

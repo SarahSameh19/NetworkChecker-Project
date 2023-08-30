@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { PopupService } from '../popup.service';
 import { CallApiService } from '../call-api.service';
-import { Router } from '@angular/router'; // Import Router
-import { Item } from '../inter'; // Make sure this path is correct
+import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ApiResponse } from '../inter';
+import { printerface } from '../pr';
+
+
 
 @Component({
   selector: 'app-popupcomp',
@@ -10,25 +14,59 @@ import { Item } from '../inter'; // Make sure this path is correct
   styleUrls: ['./popupcomp.component.scss']
 })
 export class PopupcompComponent {
-  apiData: Item[] = [];
   
-  constructor(public popupData: PopupService, private server: CallApiService, private router: Router) {}
+  apiResponse: ApiResponse = {
+    data: { flag: false },
+    message: '',
+    errorList: []
+  };
+  apiError: boolean = false;
+  loading: boolean = true;
+
+
+  insuranceNumber: string = ''; 
+
+  constructor(public popupData: PopupService, private server: CallApiService,
+     private router: Router  ) {
+   }
 
   closepopup(): void {
     this.popupData.closePopup();
   }
 
   gotoproviders() {
-    this.server.getApi().subscribe(
-      (response) => {
-        this.apiData = response.data.items;
-        console.log('API data received:', this.apiData);
-      },
-      (error) => {
-        console.error('Error fetching data:', error);
-        this.router.navigate(['/providers']);
+    this.server.getApi(this.insuranceNumber).subscribe(
+      response => {
+        this.apiResponse = response;
+        this.loading = false;
+        this.apiError = false;
         this.popupData.closePopup();
+        
+        if(this.apiError==false){
+        this.router.navigate(['/providers'], {
+          queryParams: { stuffId: this.insuranceNumber }
+        });
+        }
+      },
+      error => {
+        this.loading = false;
+       
+        this.apiError = true;
+      
+        
       }
-    );
+
+
+      
+      );
+      
+
+
+
+
+ 
   }
+
 }
+
+
