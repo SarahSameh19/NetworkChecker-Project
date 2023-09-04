@@ -43,7 +43,6 @@
 .tit2 {
 
     text-align: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +53,162 @@
     font-style: normal;
     font-weight: 300;
     bottom: 330px;
-  
     left: 310px;
     z-index: 5;
+}
+
+
+.allproviderss {
+  border-radius: 0px;
+background: var(--neutral-100, #00000000);
+border-bottom: 2px solid #F3F4F6; 
+width: 1270px;
+height: auto;
+flex-shrink: 0;
+align-items: center;
+margin-left: 120px;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+
+
+.horizontal-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #6b728000;
+}
+
+.horizontal-list li {
+  margin-top: 18px;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  // gap: 30px;
+  // border-right: 1px solid var(--neutral-500, #6B7280);
+  color: var(--neutral-500, #6B7280);
+  font-family: IBM Plex Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+
+.horizontal-list li:last-child {
+  border-right: none;
+}
+
+.allproviders {
+  border-radius: 23px;
+background: var(--neutral-100, #F3F4F6);
+
+width: 1270px;
+height: 78px;
+flex-shrink: 0;
+align-items: center;
+margin-left: 120px;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+
+.horizontal-list p {
+  margin-top: 18px;
+  flex: 1;
+  text-align: center;
+  // padding: 10px;
+  // gap: 30px;
+  // border-right: 1px solid var(--neutral-500, #6B7280);
+  color: var(--neutral-500, #000000);
+  font-family: IBM Plex Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+
+.horizontal-list p:last-child {
+  border-right: none;
+}
+
+.lis{
+  list-style: none;
+  text-align: center;
+  align-items: center;
+ 
+}
+#tx{
+  font-weight: 400px;
+}
+
+.dd{
+  background-color: #FFF;
+  border-radius: 18px;
+  padding: 10px;
+  margin-left: 10px;
+  align-items:center ;
+  display: flex;
+  height: 100%;
+  flex:1;
+  gap: 20px;
+}
+
+.org{
+  position: relative;
+  right: 40px;
+}
+
+.details-section{
+  border-radius: 23px;
+  background-color:#f9fafb;
+    padding: 20px;
+  width: 1230px;
+  height: auto;
+  flex-shrink: 0;
+  align-items: center;
+  text-align: center;
+  color: var(--neutral-500, #000000);
+  font-family: IBM Plex Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+    list-style: none;
+    display: flex;
+    
+
+    margin-bottom: 10px;
+   
+}
+
+.branches-section{
+  border-radius: 23px;
+  background-color:#f9fafb;
+  
+    padding: 20px;
+  width: 1230px;
+  height: auto;
+  
+  align-items: center;
+  text-align: center;
+  color: var(--neutral-500, #000000);
+  font-family: IBM Plex Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+    list-style: none;
+    display: flex;
+    list-style: none;
+    flex: 1;
+    margin-bottom: 10px;
+  gap: 20px;
+    
+}
+.branches-section ::content{
+  display: flex;
+  list-style: none;
+  flex: 1;
 }

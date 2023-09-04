@@ -8,7 +8,8 @@ import { PopupcompComponent } from './popupcomp/popupcomp.component';
 import { ProvidersPageComponent } from './providers-page/providers-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { printerface } from '../app/pr';
+import { printerface } from './pr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { printerface } from '../app/pr';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

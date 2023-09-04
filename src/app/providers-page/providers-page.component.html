@@ -1,15 +1,96 @@
-
 <html>
+
 <head></head>
+
 <body>
-<div class="image-container">
-<img src="../assets/shutterstock_2014536923 1.png">
-</div>
-<div class="weldiv">
-<h3 class="tit">Our Providers</h3><br>
-</div>
-<p class="tit2">Our network of experienced healthcare providers is nationwide, and all services can be booked via
-    <br> our online portal or app.</p> 
+    <div class="image-container">
+        <img src="../assets/shutterstock_2014536923 1.png">
+    </div>
+    <div class="weldiv">
+        <h3 class="tit">Our Providers</h3><br>
+    </div>
+    <p class="tit2">Our network of experienced healthcare providers is nationwide, and all services can be booked via
+        <br> our online portal or app.
+    </p>
+
+
+    <br><br><br><br><br>
+
+    <div class="allproviders" id="frst">
+        <ul class="horizontal-list">
+            <li>Icon</li>
+            <li>Provider Name</li>
+            <li>Speciality</li>
+            <li>Hotline</li>
+            <li>Number Of Branches</li>
+            <li>Area</li>
+        </ul>
+    </div>
+
+
+
+    <ul *ngIf="initialPrinterface" class="org">
+        <li *ngFor="let provider of initialPrinterface" class="allproviderss">
+            <ul class="horizontal-list"
+                (click)="provider.numberOfBranches === 1 ? Details(provider) : Branches(provider)">
+                <p><img [src]="provider.photo" alt="{{ provider.name }} Photo" width="40px" height="40px"></p>
+                <p>{{ provider.name }}</p>
+                <p>{{ provider.type }}</p>
+                <p>{{ provider.hotline ? provider.hotline : 'N/A' }}</p>
+                <p>{{ provider.numberOfBranches }}</p>
+                <p>{{ provider.area ? provider.area : 'N/A' }}</p>
+            </ul>
+
+            <div name="details" *ngIf="isDetailsClicked && !isBranchesClicked && provider.showdet "
+                class="details-section">
+                <div class="dd">
+                    <p>Type: {{ detailsprv?.data?.provider?.type }}</p>
+                    <p>Major: {{ detailsprv?.data?.specialties?.major }}</p>
+                    <p>Minor: {{ detailsprv?.data?.specialties?.minor }}</p>
+                </div>
+                <div class="dd">
+                    <p >Contact Information:</p>
+                    <ul class="lis">
+                        <li>Phones: {{ detailsprv?.data?.contactInfo?.phones }}</li>
+                        <li>Hotline: {{ detailsprv?.data?.contactInfo?.hotline || 'N/A' }}</li>
+                    </ul>
+                </div>
+                <div class="dd">
+                    <p >Location Information:</p>
+                    <ul class="lis">
+                        <li>City: {{ detailsprv?.data?.locationInfo?.city }}</li>
+                        <li>Area: {{ detailsprv?.data?.locationInfo?.area }}</li>
+                        <li>Address: {{ detailsprv?.data?.locationInfo?.address }}</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div name="branches" *ngIf="!isDetailsClicked && isBranchesClicked && provider.showdet"
+                class="branches-section">
+                <div class="dd">
+                <div *ngFor="let l of locinfo">
+                    <p>Area : {{l.area}}</p>
+                    <p>City : {{l.city}}</p>
+                    <p>Address : {{l.address}}</p>
+                </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+
+    <br><br><br>
+
+
+
+
+
+
+
+
+
+
 
 </body>
 

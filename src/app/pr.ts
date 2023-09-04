@@ -1,6 +1,19 @@
+
+export interface ProviderI {
+  id: number;
+  photo: string;
+  name: string;
+  type: string;
+  hotline: string | null;
+  numberOfBranches: number;
+  branchId: number | null;
+  area: string | null;
+  showdet:boolean;
+}
+
 export interface printerface {
     data: {
-      items: null;
+      items: ProviderI[] | null;
       pagination: null;
     };
     message: string;

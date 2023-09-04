@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProviderCallingService {
-  baseUrl:string="https://LimitlessCareAPI-Development.azurewebsites.net/api/NetworkProviders/GetNetworkProviders";
+  baseUrl:string="https://api.limitlesscare.com/api/NetworkProviders/GetNetworkProviders?currentPage=1&pageSize=20&";
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +16,7 @@ export class ProviderCallingService {
  
   getApiResponse(i: string):Observable<printerface>{
 
-    const url = `${this.baseUrl}?staffId=${i}`;
+    const url = `${this.baseUrl}staffId=${i}`;
     return this.http.get<printerface>(url);
   }
 }
