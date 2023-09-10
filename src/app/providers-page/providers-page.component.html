@@ -13,7 +13,30 @@
         <br> our online portal or app.
     </p>
 
-
+      <div class="search-container">
+        <div class="search-bar-container"> <!-- Add this container -->
+          <div class="search-bar">
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <input type="text" placeholder="Search our network providers" />
+            <div class="dropdowns">
+              <select>
+                <option value="area">Area</option>
+                <!-- Add more options as needed -->
+              </select>
+              <select id="speciality" [(ngModel)]="selectedSpeciality">
+                <option value="">Speciality</option>
+                <option *ngFor="let speciality of specialities" [value]="speciality">
+                  {{ speciality }}
+                </option>
+              </select>
+            </div>
+            <button class="search-button">Search</button>
+          </div>
+        </div>
+    </div>
+    
     <br><br><br><br><br>
 
     <div class="allproviders" id="frst">
