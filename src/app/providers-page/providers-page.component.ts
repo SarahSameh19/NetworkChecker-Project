@@ -9,6 +9,8 @@ import { DetailsProviders } from '../details';
 import { BranchesService } from '../branches.service';
 import { LocationApiResponse, LocationInfo } from '../branches';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { SpecialityService } from '../speciality.service';
+
 import { fadeInOut, slideLeftAnimation } from '../animations';
 import { slideDownAnimation } from '../animations';
 
@@ -33,6 +35,9 @@ export class ProvidersPageComponent implements OnInit {
   public initialPrinterface: ProviderI[] | null = null;
   public locinfo: LocationInfo[] | null = null;
   public detailsprv: DetailsProviders | null = null;
+  public specialities: string[] = [];
+  selectedSpeciality: string[] =[];
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -41,6 +46,7 @@ export class ProvidersPageComponent implements OnInit {
     private prcl: ProviderCallingService,
     private detserv: DetailsService,
     private branchserv: BranchesService,
+    private specialityService: SpecialityService
   ) { }
 
   ngOnInit(): void {
@@ -60,7 +66,11 @@ export class ProvidersPageComponent implements OnInit {
 
       );
     });
-
+    this.specialityService.getSpecialities().subscribe((data) => {
+      if (data && data.data && data.data.specialties) {
+        this.specialities = data.data.specialties;
+      }
+    });
 
   }
   providerId: number = 0;
