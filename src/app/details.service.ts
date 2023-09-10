@@ -19,5 +19,12 @@ export class DetailsService {
     return this.http.get<DetailsProviders>(url);
   }
 
+  
+  getApiResponse_2(i: number,j:number|null):Observable<DetailsProviders>{
+
+    const url = `${this.baseUrl}?providerId=${i}&branchId=${j}`;
+    return this.http.get<DetailsProviders>(url);
+  }
+
  
 }

@@ -9,28 +9,26 @@ import { DetailsProviders } from '../details';
 import { BranchesService } from '../branches.service';
 import { LocationApiResponse, LocationInfo } from '../branches';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-
+import { fadeInOut, slideLeftAnimation } from '../animations';
+import { slideDownAnimation } from '../animations';
 
 @Component({
   selector: 'app-providers-page',
   templateUrl: './providers-page.component.html',
   styleUrls: ['./providers-page.component.scss'],
-  animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 1 })),
-      transition(':enter', [style({ opacity: 0 }), animate('0.5s ease-out')]),
-      transition(':leave', animate('0.5s ease-in', style({ opacity: 0 }))),  ]),
-    ],
-
-
+  animations: [[fadeInOut] ,  [slideDownAnimation] , [slideLeftAnimation]],
+ 
 
 })
 export class ProvidersPageComponent implements OnInit {
 
+
+
+  
   stuffId: string = '';
   public isDetailsClicked: boolean = false;
   public isBranchesClicked: boolean = false;
-
+  public isBranchesDetailsClicked: boolean = false;
 
   public initialPrinterface: ProviderI[] | null = null;
   public locinfo: LocationInfo[] | null = null;
@@ -66,6 +64,7 @@ export class ProvidersPageComponent implements OnInit {
 
   }
   providerId: number = 0;
+  branchid: number | null = 0;
 
   Details(provider: ProviderI) {
     this.providerId = provider.id;
@@ -73,6 +72,7 @@ export class ProvidersPageComponent implements OnInit {
     this.isBranchesClicked = false;
     provider.showdet = !provider.showdet;
 
+    this.isBranchesDetailsClicked = false;
 
     this.initialPrinterface?.forEach(p => {
       if (p !== provider) {
@@ -98,6 +98,7 @@ export class ProvidersPageComponent implements OnInit {
 
   Branches(provider: ProviderI) {
     this.providerId = provider.id;
+
     this.isDetailsClicked = false;
     this.isBranchesClicked = true;
     provider.showdet = !provider.showdet;
@@ -118,6 +119,40 @@ export class ProvidersPageComponent implements OnInit {
       error => {
         console.error(error);
 
+      }
+
+    );
+
+  }
+
+
+
+
+  BranchesDetails(provider: ProviderI, l: LocationInfo) {
+    this.providerId = provider.id;
+    this.isDetailsClicked = false;
+    this.isBranchesClicked = true;
+    this.branchid = l.id;
+    this.isBranchesDetailsClicked = true;
+
+
+    this.initialPrinterface?.forEach(p => {
+      if (p !== provider) {
+        p.showdet = false;
+      }
+    });
+
+    this.detserv.getApiResponse_2(this.providerId, this.branchid).subscribe(
+
+
+      (response: DetailsProviders) => {
+        this.detailsprv = response;
+        console.log("branchesDetails");
+        console.log(this.detailsprv);
+      },
+      error => {
+        console.error(error);
+        console.log("no branches details");
       }
 
     );

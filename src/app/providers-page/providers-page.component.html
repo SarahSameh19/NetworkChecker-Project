@@ -29,12 +29,13 @@
 
 
 
-    <ul *ngIf="initialPrinterface" class="org">
-        <li *ngFor="let provider of initialPrinterface" class="allproviderss">
-            <ul class="horizontal-list"
-                (click)="provider.numberOfBranches === 1 ? Details(provider) : Branches(provider)">
+    <ul *ngIf="initialPrinterface" class="org" >
+        <li *ngFor="let provider of initialPrinterface" class="allproviderss" >
+            <ul class="horizontal-list" 
+                (click)="provider.numberOfBranches === 1 ? Details(provider) : Branches(provider)"
+                  >
                 <p><img [src]="provider.photo" alt="{{ provider.name }} Photo" width="40px" height="40px"></p>
-                <p>{{ provider.name }}</p>
+                <p >{{ provider.name }}</p>
                 <p>{{ provider.type }}</p>
                 <p>{{ provider.hotline ? provider.hotline : 'N/A' }}</p>
                 <p>{{ provider.numberOfBranches }}</p>
@@ -42,21 +43,21 @@
             </ul>
 
             <div name="details" *ngIf="isDetailsClicked && !isBranchesClicked && provider.showdet "
-                class="details-section">
+                class="details-section" [@slideLeft] [@fadeInOut]>
                 <div class="dd">
                     <p>Type: {{ detailsprv?.data?.provider?.type }}</p>
                     <p>Major: {{ detailsprv?.data?.specialties?.major }}</p>
                     <p>Minor: {{ detailsprv?.data?.specialties?.minor }}</p>
                 </div>
                 <div class="dd">
-                    <p >Contact Information:</p>
+                    <p>Contact Information:</p>
                     <ul class="lis">
                         <li>Phones: {{ detailsprv?.data?.contactInfo?.phones }}</li>
                         <li>Hotline: {{ detailsprv?.data?.contactInfo?.hotline || 'N/A' }}</li>
                     </ul>
                 </div>
                 <div class="dd">
-                    <p >Location Information:</p>
+                    <p>Location Information:</p>
                     <ul class="lis">
                         <li>City: {{ detailsprv?.data?.locationInfo?.city }}</li>
                         <li>Area: {{ detailsprv?.data?.locationInfo?.area }}</li>
@@ -65,16 +66,41 @@
                     </ul>
                 </div>
             </div>
+
             <div name="branches" *ngIf="!isDetailsClicked && isBranchesClicked && provider.showdet"
-                class="branches-section">
+                class="branches-section" [@slideLeft] [@fadeInOut]>
                 <div class="dd">
-                <div *ngFor="let l of locinfo">
-                    <p>Area : {{l.area}}</p>
-                    <p>City : {{l.city}}</p>
-                    <p>Address : {{l.address}}</p>
-                </div>
+                    <div *ngFor="let l of locinfo" (click)="BranchesDetails(provider,l)" class="brndet">
+                        <p>Area : {{l.area}}</p>
+                        <p>City : {{l.city}}</p>
+                        <p>Address : {{l.address}}</p>
+                    </div>
                 </div>
             </div>
+            <div name="branchesdetails" *ngIf="isBranchesDetailsClicked && provider.showdet" class="details-section" [@fadeInOut]>
+                <div class="dd">
+                    <p>Type: {{ detailsprv?.data?.provider?.type }}</p>
+                    <p>Major: {{ detailsprv?.data?.specialties?.major }}</p>
+                    <p>Minor: {{ detailsprv?.data?.specialties?.minor }}</p>
+                </div>
+                <div class="dd">
+                    <p>Contact Information:</p>
+                    <ul class="lis">
+                        <li>Phones: {{ detailsprv?.data?.contactInfo?.phones }}</li>
+                        <li>Hotline: {{ detailsprv?.data?.contactInfo?.hotline || 'N/A' }}</li>
+                    </ul>
+                </div>
+                <div class="dd">
+                    <p>Location Information:</p>
+                    <ul class="lis">
+                        <li>City: {{ detailsprv?.data?.locationInfo?.city }}</li>
+                        <li>Area: {{ detailsprv?.data?.locationInfo?.area }}</li>
+                        <li>Address: {{ detailsprv?.data?.locationInfo?.address }}</li>
+
+                    </ul>
+                </div>
+            </div>
+
         </li>
     </ul>
 

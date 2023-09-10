@@ -63,13 +63,27 @@
 background: var(--neutral-100, #00000000);
 border-bottom: 2px solid #F3F4F6; 
 width: 1270px;
-height: auto;
+// height: auto;
 flex-shrink: 0;
 align-items: center;
 margin-left: 120px;
   list-style: none;
   margin-bottom: 10px;
+  // animation: slideDownn 0.5s; 
+  // transition: animation 0.5s;
 }
+
+
+// @keyframes slideDownn {
+//   from {
+//     opacity: 1;
+//     transform: translateY(100%);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(-100);
+//   }
+// }
 
 
 
@@ -165,7 +179,7 @@ margin-left: 120px;
   background-color:#f9fafb;
     padding: 20px;
   width: 1230px;
-  height: auto;
+  // height: auto;
   flex-shrink: 0;
   align-items: center;
   text-align: center;
@@ -211,4 +225,14 @@ margin-left: 120px;
   display: flex;
   list-style: none;
   flex: 1;
+}
+
+.brndet{
+color: #000000;
+transition: color 0.2s;
+flex: 1;
+}
+
+.brndet:hover{
+  color: #6bbad7;
 }
