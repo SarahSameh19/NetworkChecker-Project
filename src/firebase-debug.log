@@ -1,0 +1,144 @@
+[debug] [2023-09-10T12:34:29.662Z] ----------------------------------------------------------------------
+[debug] [2023-09-10T12:34:29.666Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-09-10T12:34:29.667Z] CLI Version:   12.5.3
+[debug] [2023-09-10T12:34:29.668Z] Platform:      win32
+[debug] [2023-09-10T12:34:29.668Z] Node Version:  v18.17.1
+[debug] [2023-09-10T12:34:29.671Z] Time:          Sun Sep 10 2023 15:34:29 GMT+0300 (Eastern European Summer Time)
+[debug] [2023-09-10T12:34:29.671Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-10T12:34:29.692Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-10T12:34:29.693Z] > authorizing via signed-in user (markgamal2001@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\NetWork Checker Project\NetworkChecker\src
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2023-09-10T12:39:11.302Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2023-09-10T12:39:11.302Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"n","name":"y"}
+[debug] [2023-09-10T12:39:12.472Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2023-09-10T12:39:12.472Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id must be at least 6 characters long"},{"field":"project_id","description":"project_id contains invalid characters"},{"field":"display_name","description":"project display name must be at least 4 characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2023-09-10T12:39:12.914Z] FirebaseError: HTTP Error: 400, Request contains an invalid argument.
+    at responseToError (C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:285:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2023-09-10T12:39:28.840Z] ----------------------------------------------------------------------
+[debug] [2023-09-10T12:39:28.843Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-09-10T12:39:28.844Z] CLI Version:   12.5.3
+[debug] [2023-09-10T12:39:28.844Z] Platform:      win32
+[debug] [2023-09-10T12:39:28.845Z] Node Version:  v18.17.1
+[debug] [2023-09-10T12:39:28.846Z] Time:          Sun Sep 10 2023 15:39:28 GMT+0300 (Eastern European Summer Time)
+[debug] [2023-09-10T12:39:28.846Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-10T12:39:28.860Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-10T12:39:28.861Z] > authorizing via signed-in user (markgamal2001@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\NetWork Checker Project\NetworkChecker\src
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2023-09-10T12:41:46.748Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2023-09-10T12:41:46.749Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"1","name":"Limitless Care"}
+[debug] [2023-09-10T12:41:47.932Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2023-09-10T12:41:47.932Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id must be at least 6 characters long"},{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2023-09-10T12:41:48.197Z] FirebaseError: HTTP Error: 400, Request contains an invalid argument.
+    at responseToError (C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:285:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2023-09-10T13:51:22.982Z] ----------------------------------------------------------------------
+[debug] [2023-09-10T13:51:22.985Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2023-09-10T13:51:22.985Z] CLI Version:   12.5.3
+[debug] [2023-09-10T13:51:22.986Z] Platform:      win32
+[debug] [2023-09-10T13:51:22.986Z] Node Version:  v18.17.1
+[debug] [2023-09-10T13:51:22.987Z] Time:          Sun Sep 10 2023 16:51:22 GMT+0300 (Eastern European Summer Time)
+[debug] [2023-09-10T13:51:22.988Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-10T13:51:23.102Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-10T13:51:23.103Z] > authorizing via signed-in user (markgamal2001@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\NetWork Checker Project\NetworkChecker
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-09-10T13:51:32.721Z] Using project from CLI flag: limitless-care-93bd1
+[debug] [2023-09-10T13:51:32.726Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/limitless-care-93bd1 [none]
+[debug] [2023-09-10T13:51:33.425Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/limitless-care-93bd1 200
+[debug] [2023-09-10T13:51:33.425Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/limitless-care-93bd1 {"projectId":"limitless-care-93bd1","projectNumber":"456789483412","displayName":"Limitless Care","name":"projects/limitless-care-93bd1","resources":{"hostingSite":"limitless-care-93bd1"},"state":"ACTIVE","etag":"1_f1d987db-eac3-40d9-abc6-592e30ab18b8"}
+[info] i  Using project limitless-care-93bd1 (Limitless Care) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2023-09-10T13:51:40.393Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2023-09-10T13:51:41.698Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2023-09-10T13:51:41.698Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.3.1","browserURL":"https://www.gstatic.com/firebasejs/10.3.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.3.1/firebase.tgz"},"live":{"version":"10.3","browserURL":"https://www.gstatic.com/firebasejs/live/10.3/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.3/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.3.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.3.1/firebase-auth/cordova.js","functions":"https://www.gstatic.com/firebasejs/10.3.1/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.3.1/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.3.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.3.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.3.1/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.3.1/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.3.1/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.memory.js"}}
+[info] +  Wrote y/index.html 
+[info] 
+[info] i  Detected a .git folder at D:\NetWork Checker Project\NetworkChecker 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=28401636&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-09-10T13:51:43.295Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2023-09-10T13:51:43.295Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2023-09-10T13:51:43.900Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2023-09-10T13:51:43.900Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2023-09-10T13:51:43.912Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2023-09-10T13:51:44.511Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2023-09-10T13:51:44.511Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"markgamall","id":113033083,"node_id":"U_kgDOBry_ew","avatar_url":"https://avatars.githubusercontent.com/u/113033083?v=4","gravatar_id":"","url":"https://api.github.com/users/markgamall","html_url":"https://github.com/markgamall","followers_url":"https://api.github.com/users/markgamall/followers","following_url":"https://api.github.com/users/markgamall/following{/other_user}","gists_url":"https://api.github.com/users/markgamall/gists{/gist_id}","starred_url":"https://api.github.com/users/markgamall/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/markgamall/subscriptions","organizations_url":"https://api.github.com/users/markgamall/orgs","repos_url":"https://api.github.com/users/markgamall/repos","events_url":"https://api.github.com/users/markgamall/events{/privacy}","received_events_url":"https://api.github.com/users/markgamall/received_events","type":"User","site_admin":false,"name":"Mark Gamal","company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":"A passionate computer science student","twitter_username":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"created_at":"2022-09-07T12:47:53Z","updated_at":"2023-08-19T19:00:20Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":6678,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as markgamall 
+[info] 

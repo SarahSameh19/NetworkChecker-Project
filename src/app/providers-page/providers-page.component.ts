@@ -13,20 +13,22 @@ import { SpecialityService } from '../speciality.service';
 
 import { fadeInOut, slideLeftAnimation } from '../animations';
 import { slideDownAnimation } from '../animations';
+import { MapService } from '../map.service';
 
 @Component({
   selector: 'app-providers-page',
   templateUrl: './providers-page.component.html',
   styleUrls: ['./providers-page.component.scss'],
-  animations: [[fadeInOut] ,  [slideDownAnimation] , [slideLeftAnimation]],
- 
+  animations: [[fadeInOut], [slideDownAnimation], [slideLeftAnimation]],
+
 
 })
 export class ProvidersPageComponent implements OnInit {
 
+  long: string = "";
+  lat: string = "";
 
 
-  
   stuffId: string = '';
   public isDetailsClicked: boolean = false;
   public isBranchesClicked: boolean = false;
@@ -36,8 +38,8 @@ export class ProvidersPageComponent implements OnInit {
   public locinfo: LocationInfo[] | null = null;
   public detailsprv: DetailsProviders | null = null;
   public specialities: string[] = [];
-  selectedSpeciality: string[] =[];
-  
+  selectedSpeciality: string[] = [];
+
 
   constructor(
     private route: ActivatedRoute,
@@ -46,7 +48,8 @@ export class ProvidersPageComponent implements OnInit {
     private prcl: ProviderCallingService,
     private detserv: DetailsService,
     private branchserv: BranchesService,
-    private specialityService: SpecialityService
+    private specialityService: SpecialityService,
+    private mapService: MapService
   ) { }
 
   ngOnInit(): void {
@@ -72,7 +75,29 @@ export class ProvidersPageComponent implements OnInit {
       }
     });
 
+
   }
+
+
+
+
+
+  private openGoogleMapsFromDetails() {
+    if (this.detailsprv && this.detailsprv.data.locationInfo) {
+      const longitude = this.detailsprv.data.locationInfo.longitude || '';
+      const latitude = this.detailsprv.data.locationInfo.latitude || '';
+      this.mapService.openGoogleMaps(latitude, longitude);
+    } else {
+      console.error("Location information is missing.");
+    }
+  }
+
+
+  impmap(){
+    this.openGoogleMapsFromDetails();
+  };
+
+
   providerId: number = 0;
   branchid: number | null = 0;
 
@@ -89,13 +114,15 @@ export class ProvidersPageComponent implements OnInit {
         p.showdet = false;
       }
     });
-
+    
     this.detserv.getApiResponse(this.providerId).subscribe(
 
       (response: DetailsProviders) => {
         this.detailsprv = response;
         console.log("Details");
         console.log(this.detailsprv);
+    
+    
       },
       error => {
         console.error(error);
@@ -103,6 +130,7 @@ export class ProvidersPageComponent implements OnInit {
       }
 
     );
+
 
   }
 

@@ -18,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FirstPageComponent,
     PopupcompComponent,
     ProvidersPageComponent,
-    
+  
+        
   ],
   imports: [
     BrowserModule,

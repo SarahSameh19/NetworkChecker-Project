@@ -19,8 +19,8 @@ export interface DetailsProviders {
         city: string;
         area: string;
         address: string;
-        longitude: string;
-        latitude: string;
+        longitude: string ;
+        latitude: string ;
       };
     };
     message: string;

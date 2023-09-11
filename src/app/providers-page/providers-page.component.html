@@ -85,7 +85,9 @@
                         <li>City: {{ detailsprv?.data?.locationInfo?.city }}</li>
                         <li>Area: {{ detailsprv?.data?.locationInfo?.area }}</li>
                         <li>Address: {{ detailsprv?.data?.locationInfo?.address }}</li>
-
+                        <!-- <li>Longitude: {{ detailsprv?.data?.locationInfo?.longitude }}</li>
+                        <li>latitude: {{ detailsprv?.data?.locationInfo?.latitude }}</li>    -->
+                        <button class="btnbtn" (click)="impmap()" >Open Location</button>
                     </ul>
                 </div>
             </div>
@@ -119,6 +121,7 @@
                         <li>City: {{ detailsprv?.data?.locationInfo?.city }}</li>
                         <li>Area: {{ detailsprv?.data?.locationInfo?.area }}</li>
                         <li>Address: {{ detailsprv?.data?.locationInfo?.address }}</li>
+                        <button class="btnbtn" (click)="impmap()" >Open Location</button>
 
                     </ul>
                 </div>
