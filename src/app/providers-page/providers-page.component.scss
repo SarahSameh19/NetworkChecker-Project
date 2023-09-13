@@ -221,6 +221,8 @@ margin-left: 120px;
   height: 100%;
   flex:1;
   gap: 20px;
+  display: flex;
+  // flex-direction: column;
 }
 
 .org{
@@ -315,4 +317,26 @@ font-weight: 350;
 
 .btnbtn:hover {
   background-color: #514d9e;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+
+.ddt{
+  background-color: #FFF;
+  border-radius: 18px;
+  padding: 10px;
+  margin-left: 10px;
+  align-items:center ;
+  display: flex;
+  height: 100%;
+  flex:1;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
 }

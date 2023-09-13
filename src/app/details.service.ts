@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DetailsService {
-  baseUrl:string="https://api.limitlesscare.com/api/NetworkProvidersBranches/GetNetworkProviderDetails";
+  baseUrl:string="https://limitlesscareapi-staging.azurewebsites.net/api/NetworkProvidersBranches/GetNetworkProviderDetails";
 
   constructor(private http: HttpClient) {}
 

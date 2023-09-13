@@ -7,7 +7,7 @@ import { Speciality } from './spec';
   providedIn: 'root',
 })
 export class SpecialityService {
-  private apiUrl = 'https://limitlesscareapi-development.azurewebsites.net/api/NetworkProviders/GetProviderFiltersCriteria?specialties=';
+  private apiUrl = 'https://limitlesscareapi-staging.azurewebsites.net/api/NetworkProviders/GetProviderFiltersCriteria?specialties=';
 
   constructor(private http: HttpClient) {}
 

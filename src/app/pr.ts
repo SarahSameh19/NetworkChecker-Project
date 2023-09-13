@@ -13,7 +13,7 @@ export interface ProviderI {
 
 export interface printerface {
     data: {
-      items: ProviderI[] | null;
+      items: ProviderI[] ;
       pagination: null;
     };
     message: string;

@@ -1,4 +1,4 @@
-import { Component, OnInit, Provider } from '@angular/core';
+import { Component, HostListener, OnInit, Provider } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CallApiService } from '../call-api.service';
 import { ProviderCallingService } from '../provider-calling.service';
@@ -27,14 +27,14 @@ export class ProvidersPageComponent implements OnInit {
 
   long: string = "";
   lat: string = "";
-
+  pagee: number = 1;
 
   stuffId: string = '';
   public isDetailsClicked: boolean = false;
   public isBranchesClicked: boolean = false;
   public isBranchesDetailsClicked: boolean = false;
 
-  public initialPrinterface: ProviderI[] | null = null;
+  public initialPrinterface: ProviderI[] = [];
   public locinfo: LocationInfo[] | null = null;
   public detailsprv: DetailsProviders | null = null;
   public specialities: string[] = [];
@@ -55,19 +55,8 @@ export class ProvidersPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.stuffId = params['stuffId'] || '';
-
-      this.prcl.getApiResponse(this.stuffId).subscribe(
-        (response: printerface) => {
-          this.initialPrinterface = response.data.items;
-          console.log("Done");
-          console.log(this.initialPrinterface);
-        },
-        error => {
-          console.error(error);
-          console.log("Not Recieved");
-        }
-
-      );
+      this.loadPrinterfaceData(this.pagee);
+      
     });
     this.specialityService.getSpecialities().subscribe((data) => {
       if (data && data.data && data.data.specialties) {
@@ -77,8 +66,40 @@ export class ProvidersPageComponent implements OnInit {
 
 
   }
+  loadPrinterfaceData(page: number): void {
+    this.prcl.getApiResponse(this.stuffId, page).subscribe(
+      (response: printerface) => {
+        this.initialPrinterface = this.initialPrinterface.concat(response.data.items);
 
+        console.log('Done');
+        console.log(this.initialPrinterface);
+      },
+      (error) => {
+        console.error(error);
+        console.log('Not Received');
+      }
+    );
+  }
+  @HostListener('window:scroll', ['$event'])
+  onscroll(event: Event): void {
 
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+
+   
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    );
+
+   
+    if (scrollPosition + window.innerHeight >= documentHeight - 200) {
+      this.pagee++; 
+      this.loadPrinterfaceData(this.pagee); 
+    }
+  }
 
 
 
@@ -139,7 +160,11 @@ export class ProvidersPageComponent implements OnInit {
 
     this.isDetailsClicked = false;
     this.isBranchesClicked = true;
-    provider.showdet = !provider.showdet;
+    provider.showdet = !provider.showdet ;
+
+if(provider.showdet==false){
+  this.isBranchesDetailsClicked=false;
+}
 
 
     this.initialPrinterface?.forEach(p => {

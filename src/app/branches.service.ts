@@ -6,7 +6,7 @@ import { ApiResponse } from './inter';
   providedIn: 'root'
 })
 export class BranchesService {
-  baseUrl:string="https://LimitlessCareAPI.azurewebsites.net/api/NetworkProvidersBranches/GetNetworkProviderBranches?currentPage=1&pageSize=20&";
+  baseUrl:string="https://limitlesscareapi-staging.azurewebsites.net/api/NetworkProvidersBranches/GetNetworkProviderBranches?currentPage=1&pageSize=20&";
 
   constructor(private http: HttpClient) {}
 

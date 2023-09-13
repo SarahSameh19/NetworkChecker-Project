@@ -7,7 +7,7 @@ import { ApiResponse } from './inter';
   providedIn: 'root'
 })
 export class CallApiService {
-  baseUrl:string="https://LimitlessCareAPI.azurewebsites.net/api/Patients/ValidateStaffId";
+  baseUrl:string="https://limitlesscareapi-staging.azurewebsites.net/api/Patients/ValidateStaffId";
   constructor(private http:HttpClient) {
 
   }

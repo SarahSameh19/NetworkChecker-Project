@@ -94,11 +94,16 @@
 
             <div name="branches" *ngIf="!isDetailsClicked && isBranchesClicked && provider.showdet"
                 class="branches-section" [@slideLeft] [@fadeInOut]>
-                <div class="dd">
-                    <div *ngFor="let l of locinfo" (click)="BranchesDetails(provider,l)" class="brndet">
-                        <p>Area : {{l.area}}</p>
-                        <p>City : {{l.city}}</p>
-                        <p>Address : {{l.address}}</p>
+                <div class="ddt">
+                    <div class="row">
+                        <ng-container *ngFor="let l of locinfo; let i = index">
+                            <div (click)="BranchesDetails(provider, l)" class="brndet">
+                                <p>Area: {{ l.area }}</p>
+                                <p>City: {{ l.city }}</p>
+                                <p>Address: {{ l.address }}</p>
+                            </div>
+                            <div *ngIf="(i + 1) % 15 === 0" class="row"></div>
+                        </ng-container>
                     </div>
                 </div>
             </div>
